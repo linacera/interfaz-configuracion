@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 const device = require('./device');
 
 const Room = sequelize.define('room', {
-    id_room: {
+    room_id: {
         type: Sequelize.SMALLINT, 
         primaryKey: true,
     },
@@ -16,6 +16,6 @@ const Room = sequelize.define('room', {
     timestamps: false,
 });
 
-Room.hasMany(device, {foreignKey: 'id_room'})
+Room.hasMany(device, {foreignKey: 'room_id'})
 
 module.exports = Room;

@@ -3,6 +3,7 @@ const mainProcces = remote.require('./index');
 
 const tableBody = document.getElementById('room-table-body');
 const createRoom = document.getElementById('create-room');
+const currentWindow = remote.getCurrentWindow();
 
 ipcRenderer.on('loaded-rooms', (event, rooms)=>{
     rooms.forEach(room => {
@@ -13,16 +14,23 @@ ipcRenderer.on('loaded-rooms', (event, rooms)=>{
         tdRoomID.textContent = room.dataValues.room_id;
         let tdRoomDevices = document.createElement('td');
         let buttonRoomDevices = document.createElement('button');
-        buttonRoomDevices.textContent = "Devices";
+        buttonRoomDevices.className = "no-background-button";
         buttonRoomDevices.addEventListener('click',() => {
-            ipcRenderer.send('clicked-room', room.dataValues.room_id);
-        })
+            ipcRenderer.send('see-room-devices', room.dataValues.room_id);
+            currentWindow.reload();
+        });  
+        let imgOpen = document.createElement('img');
+        imgOpen.src="../icons/box-arrow-right.svg";  
+        buttonRoomDevices.append(imgOpen);
         let tdButtonDeleteRoom = document.createElement('td');
         let buttonDeleteRoom  = document.createElement('button');
-        buttonDeleteRoom.textContent = "Delete";
-        buttonDeleteRoom.addEventListener('click',()=>{
+        buttonDeleteRoom.className = "no-background-button";
+        buttonDeleteRoom.addEventListener('click',() => {
             ipcRenderer.send('delete-room', room.dataValues.room_id);
         })
+        let imgDelete = document.createElement('img');
+        imgDelete.src="../icons/trash.svg";
+        buttonDeleteRoom.appendChild(imgDelete);
         tdButtonDeleteRoom.appendChild(buttonDeleteRoom);
         tdRoomDevices.appendChild(buttonRoomDevices);
         tr.appendChild(tdRoomID);
@@ -34,6 +42,10 @@ ipcRenderer.on('loaded-rooms', (event, rooms)=>{
 })
 
 createRoom.addEventListener('click', ()=>{
-    console.log("click");
-    ipcRenderer.send('create-room');
+    let roomNameInput = document.getElementById('room_name');
+    if(roomNameInput.value != ""){
+        ipcRenderer.send('create-room',roomNameInput.value );
+        currentWindow.reload();
+    }
+    
 })

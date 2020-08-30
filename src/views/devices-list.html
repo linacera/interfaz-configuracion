@@ -5,42 +5,42 @@
     <title>Hello World!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/index.css">
-   
   </head>
   <body>
     <div class="top">
       <img src="../icons/smart-home.png" alt="smart-home" class="header-icon">
-      <h2>Rooms</h2>
+      <h2>Devices</h2>
     </div>
     <div class="middle">
       <h3>List</h3>
-      <table id="room-table" class="table table-bordered ">
+      <table id="device-table" class="table table-bordered ">
         <thead>
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Devices</th>
+            <th>Actions</th>
             <th>Delete</th>
           </tr>
         </thead>
-        <tbody id="room-table-body">
+        <tbody id="device-table-body">
   
         </tbody>
       </table>
+      <input type="hidden" id="room-id">
     </div>
     <div class="bottom">
-      <h3>Add</h3>
-        <div class="create-input">
-          <label for="room_name">Name: </label>
-          <br>
-          <input id="room_name" type="text" class="form-control" placeholder="Room name">
-        </div>
-        <div class="create-button">
-          <button type="submit"  id="create-room" class="btn btn-outline-primary">
-            Add
-          </button>
-        </div>    
-    </div>
-    <script type="text/javascript" src="../room.js"></script>
+        <h3>Add</h3>
+          <div class="create-input">
+            <label for="device_name">Name: </label>
+            <br>
+            <input id="device_name" type="text" class="form-control" placeholder="Device name">
+          </div>
+          <div class="create-button">
+            <button type="submit"  id="create-device" class="btn btn-outline-primary">
+              Add 
+            </button>
+          </div>    
+      </div>
+    <script type="text/javascript" src="../device.js"></script>
   </body>
 </html>

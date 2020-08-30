@@ -5,42 +5,42 @@
     <title>Hello World!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/index.css">
-   
   </head>
   <body>
     <div class="top">
       <img src="../icons/smart-home.png" alt="smart-home" class="header-icon">
-      <h2>Rooms</h2>
+      <h2>Actions</h2>
     </div>
     <div class="middle">
       <h3>List</h3>
-      <table id="room-table" class="table table-bordered ">
+      <table id="action-table" class="table table-bordered ">
         <thead>
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Devices</th>
             <th>Delete</th>
           </tr>
         </thead>
-        <tbody id="room-table-body">
+        <tbody id="action-table-body">
   
         </tbody>
       </table>
+      <input type="hidden" id="device-id">
     </div>
     <div class="bottom">
       <h3>Add</h3>
-        <div class="create-input">
-          <label for="room_name">Name: </label>
-          <br>
-          <input id="room_name" type="text" class="form-control" placeholder="Room name">
-        </div>
-        <div class="create-button">
-          <button type="submit"  id="create-room" class="btn btn-outline-primary">
+      <div class="create-input">
+        <label for="action_name">Name: </label>
+        <br>
+        <input id="action_name" type="text" class="form-control" placeholder="Action name">
+      </div>
+      <div class="create-button">
+        <button type="submit"  id="create-action" class="btn btn-outline-primary">
             Add
-          </button>
-        </div>    
+        </button>
+      </div>   
     </div>
-    <script type="text/javascript" src="../room.js"></script>
+    <script type="text/javascript" src="../action.js"></script>
   </body>
 </html>
+

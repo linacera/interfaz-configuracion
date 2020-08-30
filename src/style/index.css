@@ -12,19 +12,39 @@ table{
   text-align: center;
 }
 
-th, h2{
+th, h2, h3, img{
   color: #3626A7;
 }
 
-button{
-  background-color: #EBF4F7;
+h3{
+  text-align: left;
+}
+
+.btn-outline-primary {
+  color: #3626A7;
+  border-color: #3626A7;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #3626A7;
+  border-color: #3626A7;
+}
+
+
+
+.no-background-button{
+  background: none;
   border-style: none;
   height: 30px;
 }
 
-.top, .bottom, .middle{
+.top, .middle{
   text-align: center;
   margin: 10px;
+}
+.bottom{
+  text-align: left;
 }
 
 .top{
@@ -38,6 +58,10 @@ button{
 
 .bottom{
   height: 10%;
+}
+
+.create-input{
+  margin-bottom: 20px;
 }
 
 .top h2{

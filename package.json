@@ -45,17 +45,18 @@
     }
   },
   "dependencies": {
+    "bootstrap-icons": "^1.0.0",
     "electron-squirrel-startup": "^1.0.0",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.4",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.52",
-    "@electron-forge/maker-deb": "^6.0.0-beta.52",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.52",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.52",
-    "@electron-forge/maker-zip": "^6.0.0-beta.52",
+    "@electron-forge/cli": "^6.0.0-beta.53",
+    "@electron-forge/maker-deb": "^6.0.0-beta.53",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.53",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.53",
+    "@electron-forge/maker-zip": "^6.0.0-beta.53",
     "electron": "9.2.1"
   }
 }

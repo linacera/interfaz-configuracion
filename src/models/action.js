@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 
 
 const Action = sequelize.define('action', {
-    id_action: {
+    action_id: {
         type: Sequelize.SMALLINT, 
         primaryKey: true,
     },
