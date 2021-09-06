@@ -23,7 +23,6 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, './views/index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
 
   mainWindow.webContents.on('did-finish-load', async () => {
     rooms = await getRooms();
@@ -73,7 +72,6 @@ ipcMain.on('see-room-devices', async (event, idRoom) => {
   devicesWindow.loadFile(path.join(__dirname, './views/devices-list.html'));
 
   // Open the DevTools.
-  devicesWindow.webContents.openDevTools();
 
   devicesWindow.webContents.on('did-finish-load', async () => {
     devices = await getDevices(idRoom);
@@ -95,7 +93,6 @@ ipcMain.on('see-device-actions', async (event, idDevice) => {
   actionsWindow.loadFile(path.join(__dirname, './views/actions-list.html'));
 
   // Open the DevTools.
-  actionsWindow.webContents.openDevTools();
 
   actionsWindow.webContents.on('did-finish-load', async () => {
     actions = await getActions(idDevice);

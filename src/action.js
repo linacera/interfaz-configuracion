@@ -7,28 +7,31 @@ const idDevice = document.getElementById('device-id');
 
 ipcRenderer.on('loaded-actions', (event, actions, device_id)=>{
     idDevice.id = device_id;
-    actions.forEach(action => {
-        let tr = document.createElement('tr');
-        let tdActionName = document.createElement('td');
-        tdActionName.textContent = action.dataValues.action_name;
-        let tdActionID = document.createElement('td');
-        tdActionID.textContent = action.dataValues.action_id;
-        let tdButtonDeleteAction = document.createElement('td');
-        let buttonDeleteAction  = document.createElement('button');
-        buttonDeleteAction.className = "no-background-button";
-        buttonDeleteAction.addEventListener('click',() => {
-            ipcRenderer.send('delete-action', action.dataValues.action_id);
-        
-        })
-        let img = document.createElement('img');
-        img.src="../icons/trash.svg";
-        buttonDeleteAction.appendChild(img);
-        tdButtonDeleteAction.appendChild(buttonDeleteAction);
-        tr.appendChild(tdActionID);
-        tr.appendChild(tdActionName);
-        tr.appendChild(tdButtonDeleteAction);
-        tableBody.appendChild(tr);
-    });
+    if(actions.length > 0){
+        actions.forEach(action => {
+            let tr = document.createElement('tr');
+            let tdActionName = document.createElement('td');
+            tdActionName.textContent = action.dataValues.action_name;
+            let tdActionID = document.createElement('td');
+            tdActionID.textContent = action.dataValues.action_id;
+            let tdButtonDeleteAction = document.createElement('td');
+            let buttonDeleteAction  = document.createElement('button');
+            buttonDeleteAction.className = "no-background-button";
+            buttonDeleteAction.addEventListener('click',() => {
+                ipcRenderer.send('delete-action', action.dataValues.action_id);
+            
+            })
+            let img = document.createElement('img');
+            img.src="../icons/trash.svg";
+            buttonDeleteAction.appendChild(img);
+            tdButtonDeleteAction.appendChild(buttonDeleteAction);
+            tr.appendChild(tdActionID);
+            tr.appendChild(tdActionName);
+            tr.appendChild(tdButtonDeleteAction);
+            tableBody.appendChild(tr);
+        });
+    }
+    
 })
 
 createAction.addEventListener('click', ()=>{
