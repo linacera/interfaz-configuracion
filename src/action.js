@@ -19,7 +19,7 @@ ipcRenderer.on('loaded-actions', (event, actions, device_id)=>{
             buttonDeleteAction.className = "no-background-button";
             buttonDeleteAction.addEventListener('click',() => {
                 ipcRenderer.send('delete-action', action.dataValues.action_id);
-            
+                tr.remove()
             })
             let img = document.createElement('img');
             img.src="../icons/trash.svg";

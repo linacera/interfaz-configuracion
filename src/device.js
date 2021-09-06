@@ -27,6 +27,7 @@ ipcRenderer.on('loaded-devices', (event, devices, room_id)=>{
         buttonDeleteDevice.className="no-background-button";
         buttonDeleteDevice.addEventListener('click',() => {
             ipcRenderer.send('delete-device', device.dataValues.device_id);
+            tr.remove()
         })
         let img = document.createElement('img');
         img.src="../icons/trash.svg";

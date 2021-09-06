@@ -45,6 +45,7 @@ function createElements(room){
             buttonDeleteRoom.className = "no-background-button";
             buttonDeleteRoom.addEventListener('click',() => {
                 ipcRenderer.send('delete-room', room.dataValues.room_id);
+                tr.remove()
             })
             let imgDelete = document.createElement('img');
             imgDelete.src="../icons/trash.svg";
